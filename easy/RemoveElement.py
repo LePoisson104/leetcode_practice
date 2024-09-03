@@ -1,13 +1,10 @@
 def removeElement(nums, val):
-    prevVals = []
-    newList = []
-    for i, num in enumerate(nums):
-        if num == val:
-            continue
-        elif num == val and i < len(nums) and nums[i+1] != val:
-            prevVals.append(nums[i])
-
-    return len(newList), prevVals
+    index = 0
+    for i in range(len(nums)):
+        if nums[i] != val:
+            nums[index] = nums[i]
+            index += 1
+    return index
 
 nums = [3,2,2,3,1,3,2,3]
 val = 3
